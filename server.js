@@ -53,7 +53,7 @@ router.route('/ptmgt/v1/offers/:id').get(function (request, response) {
 
     var id = request.params.id;
 
-    connection.execute("SELECT offers.id, offername, points, message, productname, productprice, productimage, productdesc, productid FROM offers, product WHERE offers.id = :id AND product.id = offers.productid",
+    connection.execute("SELECT offers.id, offername, points, message, productname, productprice, productimage, productdesc, productid FROM sys.offers, sys.product WHERE offers.id = :id AND product.id = offers.productid",
       [id],
       { outFormat: oracledb.OBJECT },
       function (err, result) {
