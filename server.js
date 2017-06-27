@@ -24,7 +24,7 @@ function doRelease(connection) {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: '*/*' }));
 
-var PORT = process.env.PORT || 8088;
+var PORT = process.env.PORT || 8080;
 
 var router = express.Router();
 
