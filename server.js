@@ -6,9 +6,9 @@ var oracledb = require('oracledb');
 oracledb.autoCommit = true;
 
 var connectionProperties = {
-  user: process.env.DBAAS_USER_NAME || "DEV_SOAINFRA",
-  password: process.env.DBAAS_USER_PASSWORD || "welcome1",
-  connectString: process.env.DBAAS_DEFAULT_CONNECT_DESCRIPTOR || "ace05.hk.oracle.com:1521/orcl.oracle.com"
+  user: process.env.DBAAS_USER_NAME || "loyalty",
+  password: process.env.DBAAS_USER_PASSWORD || "Welcome_1",
+  connectString: process.env.DBAAS_DEFAULT_CONNECT_DESCRIPTOR || "localhost:1521/orcl.oracle.com"
 };
 
 function doRelease(connection) {
@@ -37,6 +37,12 @@ router.use(function (request, response, next) {
   response.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+
+// To-do: Let's get a quick preview of all offers
+// router.route('/ptmgt/v1/offers').get(function (request, response) {
+//   console.log("GET ALL OFFERS");
+//
+// })
 
 /**
  * GET /ptmgt/v1/offers/:id
