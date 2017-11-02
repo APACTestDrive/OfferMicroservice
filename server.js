@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var restclient = require('node-rest-client').Client;
+var Client = require('node-rest-client').Client;
 var client = new Client();
 var bodyParser = require('body-parser');
 
