@@ -29,7 +29,7 @@ router.route('/ptmgt/v1/offers/:id').get(function (request, response) {
   var id = request.params.id;
   console.log("GET OFFER BY ID:" + id);
   client.get("http://" + SVCHOST + "/crm/resources/offer/" + id, function(data, remoteResponse) {
-	var offer = { id: data.offerid, name: data.offername, points: data.points, message: data.message, productid: data.productid ,productname: data.productname, productprice: data.productprice, productimage: data.productimage, productdesc: data.productdesc };
+	var offer = { id: data.id, name: data.name, points: data.points, message: data.message, productid: data.productid ,productname: data.productname, productprice: data.productprice, productimage: data.productimage, productdesc: data.productdesc };
     response.json(offer);
   }).on('error', function(err) {
       console.log('something went wrong on the request', err.request.options);
